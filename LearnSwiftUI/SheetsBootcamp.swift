@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// you can use popover modifier with presentationCompactAdaptation
+
 struct SheetsBootcamp: View {
     
     @State var showSheet: Bool = false
@@ -27,12 +29,15 @@ struct SheetsBootcamp: View {
                     .clipShape(.rect(cornerRadius: 10))
             }
             // sheet
-//            .sheet(isPresented: $showSheet) {
+            .sheet(isPresented: $showSheet) {
+                SecondScreen()
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+                    .interactiveDismissDisabled()
+            }
+//            .fullScreenCover(isPresented: $showSheet) {
 //                SecondScreen()
 //            }
-            .fullScreenCover(isPresented: $showSheet) {
-                SecondScreen()
-            }
         }
     }
 }

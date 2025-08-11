@@ -27,6 +27,7 @@ struct ListBootcamp: View {
                 ) {
                     ForEach(fruits, id: \.self) { fruit in
                         Text(fruit.capitalized)
+                            .badge(5)
                     }
                     .onDelete(perform: delete)
                     .onMove(perform: move)
@@ -35,6 +36,7 @@ struct ListBootcamp: View {
                 Section(header: Text("Veggies")) {
                     ForEach(veggies, id: \.self) { veggie in
                         Text(veggie.capitalized)
+                            .badge("New Item")
                     }
                 }
             }

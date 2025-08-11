@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// you can use Group to combine view elements together to apply some modifiers
+
 struct StacksBootcamp: View {
     var body: some View {
         VStack {
